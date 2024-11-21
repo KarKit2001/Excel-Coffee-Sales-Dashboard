@@ -1,6 +1,6 @@
 
 # Excel Coffee Sales Dashboard
-![Excel project](https://github.com/user-attachments/assets/6758440a-6c03-4870-b44d-02efe5303f0f)
+![Excel project](https://github.com/user-attachments/assets/5bf2b737-9089-46c2-ad81-2796f8cb6344)
 
 This Excel project offers an interactive sales dashboard for filtering, exploring, and visualizing data with slicers, timelines, and charts. It’s ideal for analysts and managers to track performance and gain actionable insights.
 
