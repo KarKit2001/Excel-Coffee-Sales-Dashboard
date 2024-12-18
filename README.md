@@ -2,42 +2,75 @@
 # Excel Coffee Sales Dashboard
 ![Excel project](https://github.com/user-attachments/assets/5bf2b737-9089-46c2-ad81-2796f8cb6344)
 
-This Excel project offers an interactive sales dashboard for filtering, exploring, and visualizing data with slicers, timelines, and charts. It’s ideal for analysts and managers to track performance and gain actionable insights.
+The Coffee Sales Dashboard analyzes sales data spanning from **2019 to 2022** to uncover trends, insights, and performance drivers across key dimensions, including roast type, product size, geographic distribution, and customer loyalty. This interactive dashboard empowers stakeholders to explore sales performance visually and dynamically filter data. The primary focus is to:
+- Identify **sales trends** over time.
+- Pinpoint **top-performing regions** and customer segments.
+- Evaluate roast types, size preferences, and the impact of loyalty programs.
+
+The dashboard provides decision-makers with actionable insights to optimize sales, target growth opportunities, and improve customer retention.
+
+## **Executive Summary**
+Between **2019 and 2022**, coffee sales demonstrated fluctuating trends driven by factors such as seasonality, roast type preferences, and country-specific performance. Key findings include:
+1. **United States** emerged as the top-performing country with sales of **RM35,639**, significantly outperforming other regions like Ireland (**RM6,697**) and the United Kingdom (**RM2,799**).
+2. Among the roast types:
+   - **Arabica** dominated sales, particularly in the first half of each year.
+   - Other varieties, such as **Excelsa** and **Robusta**, experienced lower but consistent sales contributions.
+3. The **top 5 customers** generated revenues ranging between **RM278** to **RM317**, led by **Allis Wilmore**.
+---
+## **Insights Deep-Dive**
+
+### **1. Total Sales Over Time**
+![Picture1](https://github.com/user-attachments/assets/c3671a2d-40e3-40e5-8677-d7def847b13c)
+
+- Sales showed **seasonal peaks** each year, particularly around **April–May** and **September–October**, likely influenced by holidays, promotions, or seasonal demand.
+- There were noticeable dips in sales across all years, particularly around **February and August**, signaling potential off-peak periods.
+
+### **2. Sales by Country**
+![Picture2](https://github.com/user-attachments/assets/8fd45ac4-05c4-495e-b2a0-942201f0d769)
+
+- **United States** contributed over 80% of total sales, underscoring it as the dominant market.
+- **Ireland** and **United Kingdom** showed growth potential but remain underperforming compared to the US.
+- Geographic sales disparity suggests an opportunity to expand marketing efforts in smaller regions.
+
+### **3. Product and Customer Preferences**
+![Picture3](https://github.com/user-attachments/assets/aaa67446-9609-4b32-ba76-a18a7d11f375)
+
+- **Arabica** led sales compared to Excelsa, Liberica, and Robusta, highlighting customer preference for high-quality coffee.
+- The **top 5 customers** contributed significantly to overall sales, with revenue per customer ranging from **RM278 to RM317**.
+
+### **4. Loyalty Programs**
+- **Loyalty card holders**' average spending was lower than that of non-card holders. This suggests that opportunities exist to incentivize higher spending among cardholders.
+---
+
+## **Recommendations**
+
+1. **Geographic Expansion**
+   - Focus marketing efforts in regions like **Ireland** and the **United Kingdom** to drive sales growth.
+   - Introduce targeted campaigns to leverage untapped markets while maintaining stronghold in the United States.
+
+2. **Boost Seasonal Sales**
+   - Capitalize on peak periods (April–May and September–October) through promotions, bundled offers, and discounts to maximize revenue.
+   - Introduce loyalty-based incentives during low-sales months (February and August) to improve demand consistency.
+
+3. **Product and Roast Optimization**
+   - Prioritize the production and promotion of **Arabica** coffee, given its dominant market share and customer preference.
+
+4. **Enhance Loyalty Programs**
+   - Expand loyalty card initiatives to attract non-cardholders by offering rewards such as **discounts, referral bonuses, or free samples**.
+   - Personalize promotions for loyal customers to maintain long-term relationships and encourage higher spending.
+
+5. **Target High-Value Customers**
+   - Focus on retaining top customers, like **Allis Wilmore**, through exclusive offers or personalized communication.
+   - Develop strategies to identify and nurture high-potential customers, ensuring they contribute more to overall sales.
+
+---
 
 
-## XLOOKUP
+
+## **Excel**
+The dataset was prepared using **XLOOKUP** to retrieve Customer Name, Email, and Country based on Customer ID, replacing missing Email values with blanks for consistency. **INDEX MATCH** dynamically pulled product details like Coffee Type, Roast Type, Size, and Unit Price using Product IDs. Abbreviations in Coffee Types (e.g., "ROB" → "Robusta") and Roast Types (e.g., "M" → "Medium") were expanded with **Multiple IF Functions**. **Date Formatting** standardized Order Dates to a user-friendly format (e.g., "05-Sep-2019"), and duplicates were removed using **Remove Duplicates**. The raw data was structured into a table format with **Convert Range to Table** for improved management.
+
+Total Sales were calculated by multiplying Unit Price with Quantity Sold. **Pivot Tables** summarized sales trends, grouping dates by Year/Month and analyzing data across Coffee Types and Sales. Tables were formatted to remove decimals and apply number formatting. The Pivot Table data source was refreshed using table references, with a "Loyalty Card" column auto-populated via XLOOKUP. **Slicers** and **Timelines** were added for interactive filtering.
+
+For visual insights, the **Sales by Country** bar chart was customized by sorting countries based on sales and enhancing the layout with colors and labels. A **Top 5 Customers** chart was created by filtering top sales contributors. The final **dashboard** was assembled by integrating charts, slicers, and timelines, ensuring a clean layout with consistent filtering and a polished, user-friendly presentation.
 To retrieve Customer Name, Email, and Country based on Customer ID, XLOOKUP was utilized. Missing values in the Email field were replaced with blank spaces instead of zeros to ensure data consistency.
-
-## INDEX MATCH
-INDEX MATCH was applied to dynamically pull product information—such as Coffee Type, Roast Type, Size, and Unit Price—using the Product ID. The MATCH function identified the row and column positions, enabling INDEX to fetch the required details efficiently
-
-## Multiplication
-Sales values were derived by multiplying Unit Price with Quantity Sold. This formula was extended across all rows to calculate the total sales for each transaction with minimal manual effort.
-
-## Multiple IF functions
-Abbreviations in the dataset were expanded using multiple IF functions. Coffee Type abbreviations ("ROB", "EXE", "ARA", and "LIB") were mapped to their full names like "Robusta", "Excelsa", "Arabica", and "Liberica"." Similarly, Roast Type codes ("M", "L", and "D") were converted into their complete forms, such as "Medium", "Light", and "Dark".
-
-## Date Formatting
-Date Formatting was applied to the Order Date column to display dates in a more standardized and user-friendly format. The format was customized to show the day, month abbreviation (e.g., "Sep"), and year (e.g., "2019"), transforming dates like "05/09/2019" into "05-Sep-2019".
-
-## Check For Duplicates
-The dataset was reviewed for duplicate entries using the "Remove Duplicates" function.
-
-## Convert Range to Table
-The raw dataset was structured into a formal table format using the "Convert Range to Table" option.
-
-## Pivot Tables and Pivot Charts + Formatting
-The "Pivot Tables and Pivot Charts" function was used to analyze sales trends. A pivot table was created from the "Orders Table," grouping order dates by year and month, and displaying coffee types and sales. Formatting included removing decimals and adding number formatting.
-
-## Updating the Pivot Table Data Source
-
-The Pivot Table data source was updated by converting the "Orders" range to a table for easy refresh. A "Loyalty Card" column was added, and XLOOKUP was used to auto-populate values based on customer IDs.
-
-After refreshing the Pivot Table, a slicer for "Loyalty Card" was added and styled for clarity.
-
-For the "Sales by Country" bar chart, the pivot sheet was duplicated, unnecessary fields removed, countries sorted by sales, and the chart customized with color and data labels.
-
-The "Top Five Customers" chart was created, filtered by top sales, and the dashboard was completed with slicers, a timeline, and visualizations.
-
-## Building the Dashboard
-The final dashboard was assembled by integrating charts, slicers, and timelines from various sheets. Slicers and timelines were linked to all visuals for consistent filtering. Elements were arranged cleanly, and the Excel interface was adjusted to create a polished and user-friendly presentation.
